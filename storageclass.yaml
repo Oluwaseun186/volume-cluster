@@ -4,8 +4,7 @@ kind: StorageClass
 metadata:
   name: standard
 provisioner: ebs.csi.aws.com
-allowVolumeExpansion: true
-parameters:
-  type: gp2  # EBS volume type (gp2, io1, etc.)
-reclaimPolicy: Retain
 volumeBindingMode: WaitForFirstConsumer
+reclaimPolicy: Delete
+parameters:
+  type: gp2
